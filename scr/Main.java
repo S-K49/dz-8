@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         String[] words = new String[]{"mama", "tato", "and new me"};
-        pairedLetters(word);
+        pairedLetters(words);
     }
 
     public static void pairedLetters(String[] words) {
@@ -13,15 +13,13 @@ public class Main {
         List<String> helpList = new ArrayList<>();
 
         for(String word: words) {
-        char [] characters = char.toCharArray();
+        char [] characters = word.toCharArray();
 
             Map<Character, Integer> helpMap = new HashMap<>();
             for(Character character : characters) {
                 if(helpMap.containsKey(character)) {
                 Integer value = helpMap.get(character)+1;
                 helpMap.put(character, value);
-                /*if (helpMap.containsKey(character)){
-                    System.out.println(character);*/
                 } else{
                     helpMap.put(character, 1);
                 }
@@ -39,7 +37,7 @@ public class Main {
             }
         }
 
-        Set<Character> mySet = new Hashset<>();
+        Set<Character> mySet = new HashSet<>();
 
         for (String chars: helpList) {
             for (Character character : chars.toCharArray()) {
